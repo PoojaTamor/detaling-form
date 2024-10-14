@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+    
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+  />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      :root {
+        --primary-color: #e6b800;
+        --secondary-color: #000;
+        --bg-color: #f0f0f0;
+        --font-family: "Poppins", sans-serif;
+      }
+      .outerdiv {
+        width: 100%;
+        height: 100vh;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 0px;
+      }
+      .left-section {
+        height: 82vh;
+        width: 100%;
+        background-color: var(--bg-color);
+        padding: 40px;
+        font-family: var(--font-family);
+      }
+
+      .form-control:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+
+      /* -----------------------top-box---------------- */
+
+      .top-box .form-control {
+        background-color: #dbdbdb;
+        height: 50px;
+      }
+
+      .top-box .form-label {
+        /* margin-left: 10px; */
+      }
+
+      .details-text {
+        margin-top: 10px;
+      }
+
+      /* --------------left-sec-mid-box----------- */
+      .midd-box .form-control {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        border-radius: 0px;
+      }
+
+      /* ------------------yellow-section-=============== */
+      .yellow-bg {
+        height: 13vh;
+        display: flex;
+        align-items: center;
+        padding-left: 40px;
+        background: linear-gradient(86deg, #fdd835, #fae08b);
+      }
+
+      .yellow-bg p {
+        font-size: 20px;
+      }
+      /* ------------------yellow-section-end=============== */
+
+      .sidetext h5 {
+        font-size: 30px;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+      }
+
+      /* ==========================================================right-section============================ */
+.right-section{
+    height: 95vh;
+    padding: 20px  40px 20px 40px;
+    background-color: var(--secondary-color);
+}
+
+.right-heading {
+        font-size: 45px;
+        font-weight: 400;
+        color: rgb(196, 196, 196);
+       
+      }
+      .right-heading span{
+        display: block;
+      }
+
+      .right-text{
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 20px;
+
+      }
+
+
+      .radio-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .radio-container {
+        position: relative;
+        display: inline-block;
+        /* padding: 10px 20px; */
+        border-radius: 20px;
+        border: 2px solid black;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 17px;
+        text-transform: uppercase;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .radio-container input[type="radio"] {
+        display: none; /* Hide the default radio button */
+      }
+
+      .radio-container .radio-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .radio-container input[type="radio"]:checked + .radio-label {
+        background-color: #e6b800;
+        color: black;
+        border-color: #e6b800;
+      }
+
+      .radio-container .radio-label {
+        padding: 5px 10px;
+        background-color: #e4e4e4;
+        color: black;
+        border-radius: 20px;
+        transition:  0.3s, color 0.3s;
+      }
+
+      .service-lable{
+        font-size: 22px;
+        font-weight: 500;
+        color: #fff;
+      }
+
+      .upload-btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.bi-upload::before {
+    content: "\f603";
+    margin-right: 15px;
+}
+
+
+[type="button"]:not(:disabled),
+      [type="reset"]:not(:disabled),
+      [type="submit"]:not(:disabled),
+      button:not(:disabled) {
+        cursor: pointer;
+        padding-block: 10px;
+        background-color: var(--primary-color);
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .servicebox input{
+        background-color: transparent;
+        border: none;
+      }
+      .form-text{
+        font-size: 12px;
+      }
+
+/* ----tooltip------- */
+
+
+.tooltip-inner {
+        background-color: #e6b800 !important;
+        color: black !important;
+        font-size: 12px !important; 
+        font-weight: normal !important;
+        padding: 3px 5px; 
+      }
+
+      .tooltip-arrow::before {
+        border-bottom-color: #e6b800 !important; 
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+      /* =================================================bottom===================================== */
+      .bottomcopyright {
+        margin-bottom: 0px;
+        padding-block: 5px;
+        font-size: 16px;
+        background-color: var(--secondary-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid outerdiv">
+      <form action="">
+        <div class="row gx-0">
+          <div class="col-md-8">
+            <!-- =============================================left-section========================= -->
+            <div class="left-section">
+              <!-- ----------- left-sec-top-box--------------- -->
+              <div class="row gx-5">
+                <div class="col-6">
+                  <svg
+                    width="260"
+                    height="40"
+                    viewBox="0 0 409 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M83.8199 3.48589C84.1697 2.43801 83.8804 2.2611 82.9251 2.27471C79.7296 2.30873 76.5273 2.34956 73.3385 2.25429C72.2016 2.22027 71.8383 2.68297 71.5356 3.68322C70.4121 7.33037 69.2348 10.9639 67.997 14.5703C66.8399 17.952 66.0393 21.4699 64.4785 24.702C62.4401 28.9207 58.545 30.7647 54.1923 29.6828C51.6494 29.05 50.5461 27.3421 51.1246 24.7428C51.3937 23.5248 51.8108 22.3341 52.201 21.1433C54.2596 14.9241 56.3249 8.70486 58.4642 2.27471C54.5489 2.27471 50.9363 2.28151 47.3304 2.27471C46.6913 2.27471 46.2405 2.36316 45.9984 3.11165C43.6774 10.3855 41.0066 17.5574 39.0624 24.9333C36.9971 32.772 40.3271 37.6167 48.1578 39.3655C51.0708 40.0187 54.0242 40.0663 56.9842 39.9506C66.49 39.5628 73.1569 35.0379 76.3793 25.8928C78.9963 18.4692 81.3105 10.9435 83.8131 3.47228"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M31.097 19.8708C30.8952 19.7824 30.727 19.6123 30.4714 19.4286C31.2047 18.9795 31.8841 18.6324 32.4829 18.1834C35.3891 16.0264 36.8153 13.1413 36.3444 9.48053C35.9138 6.11236 33.7745 4.06423 30.8346 2.7782C28.9711 1.96168 27 1.58743 24.9549 1.59424C19.9833 1.61465 15.0118 1.57382 10.0402 1.61465C8.51982 1.62826 6.64288 0.975038 5.57995 1.92085C4.59774 2.79862 4.95429 4.72426 4.70538 6.1804C4.63811 6.59547 4.57083 7.00373 4.47665 7.412C4.24119 8.44627 4.61792 8.77288 5.6674 8.71844C9.51548 8.52792 13.3501 8.63679 17.1578 9.37847C17.5951 9.46012 18.1737 9.65745 18.4293 9.08588C19.694 6.23484 22.1899 6.59547 24.5311 6.73836C27.5046 6.92208 30.4714 7.37798 33.6131 6.6431C32.8596 7.93594 31.8438 8.50751 30.6665 8.73885C29.2201 9.03144 27.7535 9.20836 26.2936 9.41929C23.8852 9.76632 23.3403 10.7325 24.4234 12.9712C25.4056 14.9989 25.8765 17.0266 25.7824 19.3469C25.6949 21.4631 26.2465 23.6745 27.4844 25.4777C28.4666 26.9066 28.2446 28.1926 27.5113 29.4923C26.6569 30.996 25.446 32.1256 23.6296 32.3025C23.0914 32.3569 22.5263 32.1528 22.2034 31.6969C21.1674 30.2544 19.6133 29.9073 18.0324 29.6011C16.734 29.3494 15.4625 28.9615 14.4938 28.0497C13.6663 27.274 12.9801 27.4305 12.1123 27.8796C7.49053 30.2884 3.88464 33.8811 0.628571 37.8821C0.359475 38.2155 -0.124898 38.4945 0.0298322 39.1409C8.12963 39.1409 16.2227 39.243 24.3091 39.0865C27.2758 39.032 30.1014 38.025 32.5434 36.1266C38.2752 31.6561 37.6697 22.6402 31.0903 19.8708"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M92.2155 28.8595C90.8835 28.8731 90.6009 28.5805 91.0584 27.2401C92.6461 22.6199 94.1194 17.9521 95.6263 13.2978C96.7969 9.68471 97.9607 6.07157 99.1851 2.28833C95.5859 2.28833 92.2222 2.34957 88.8585 2.26111C87.5938 2.22709 87.0152 2.60133 86.6116 3.86695C83.813 12.7399 80.9134 21.5856 78.061 30.4381C77.1663 33.2075 76.3052 35.9769 75.3701 38.93C85.9523 38.93 96.299 38.93 106.653 38.9368C107.211 38.9368 107.541 38.7463 107.702 38.2155C108.664 35.1536 109.633 32.0916 110.662 28.8323H108.543C103.1 28.8323 97.6512 28.7983 92.2088 28.8527"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M144.366 28.8051C138.924 28.88 133.475 28.8323 128.032 28.8323C126.494 28.8323 125.958 28.1088 126.424 26.6617C128.92 19.0068 131.403 11.3518 133.925 3.7037C134.248 2.71706 134.376 2.21353 133.017 2.25436C129.882 2.34282 126.741 2.32921 123.606 2.25436C122.556 2.22714 122.2 2.66262 121.904 3.58802C118.291 14.8901 114.651 26.1922 110.958 37.4739C110.528 38.7872 110.891 38.9505 112.068 38.9437C116.919 38.896 121.776 38.9233 126.626 38.9233C131.477 38.9233 136.334 38.9028 141.184 38.9437C142.2 38.9505 142.772 38.7531 143.081 37.6372C143.768 35.1672 144.595 32.7381 145.423 30.3089C145.793 29.2202 145.698 28.7847 144.366 28.7983"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M286.228 1.05491C281.909 1.10935 277.583 1.12976 273.257 1.0413C272.066 1.02089 271.488 1.46998 270.909 2.44981C267.364 8.45809 263.758 14.4324 260.152 20.3998C259.843 20.9101 259.681 21.8423 258.813 21.4953C258.114 21.2163 258.484 20.4338 258.504 19.8895C258.706 14.2078 258.908 8.52614 259.197 2.85127C259.264 1.51081 259.029 0.973258 257.535 1.01408C253.748 1.12976 249.953 1.11615 246.166 1.01408C244.888 0.980062 244.45 1.46998 244.101 2.60632C241.921 9.61484 239.674 16.5962 237.44 23.5911C235.96 28.2385 234.474 32.8859 232.94 37.683C236.391 37.683 239.647 37.6285 242.896 37.7102C244.04 37.7374 244.545 37.37 244.888 36.2541C246.287 31.6883 247.787 27.1566 249.247 22.6112C249.409 22.1077 249.456 21.4613 250.196 21.5498C251.07 21.6518 250.68 22.3867 250.667 22.829C250.572 27.3199 250.465 31.804 250.283 36.2881C250.236 37.404 250.572 37.7442 251.662 37.7034C253.613 37.6217 255.578 37.5945 257.522 37.7102C258.766 37.785 259.399 37.3087 259.991 36.2405C262.527 31.7155 265.157 27.245 267.768 22.7609C268.104 22.1894 268.36 21.1551 269.241 21.6246C269.813 21.9308 269.18 22.6929 269.019 23.21C267.647 27.5921 266.261 31.9741 264.814 36.3357C264.485 37.3292 264.518 37.7238 265.696 37.6966C268.716 37.6353 271.737 37.649 274.757 37.6966C275.598 37.7102 276.022 37.4516 276.285 36.6215C279.904 25.1901 283.55 13.7655 287.217 2.34094C287.553 1.28626 287.311 1.02769 286.234 1.0413"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M371.975 2.38172C372.433 1.03445 371.894 1.03445 370.892 1.04806C367.757 1.08208 364.615 1.10929 361.48 1.03445C360.444 1.00723 360.061 1.39508 359.758 2.33409C358.029 7.79121 356.233 13.2279 354.457 18.6714C353.831 20.5971 353.253 22.5499 352.23 24.3191C350.225 27.7621 346.546 29.3884 342.677 28.5514C339.825 27.9322 338.654 26.1563 339.381 23.312C339.872 21.4068 340.538 19.5492 341.15 17.6848C342.953 12.2005 344.776 6.71612 346.646 1.06847C342.745 1.06847 339.018 1.07527 335.297 1.06166C334.651 1.06166 334.376 1.34745 334.181 1.94624C331.887 9.09766 329.317 16.1742 327.319 23.4141C325.125 31.3684 328.429 36.3833 336.401 38.1592C339.139 38.7716 341.91 38.8329 344.696 38.7512C354.948 38.4382 361.326 33.8997 364.763 24.1218C367.3 16.9227 369.52 9.61479 371.968 2.38172"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M228.87 27.1498C228.628 26.1972 228.856 25.7617 229.643 25.2922C232.24 23.7408 234.299 21.6314 235.738 18.9301C240.32 10.3293 236.673 2.70838 227.195 1.27265C223.501 0.714688 219.747 1.18419 216.686 1.05491C214.069 1.05491 212.118 1.01408 210.167 1.06851C208.412 1.11615 206.232 0.347248 205.014 1.38152C203.891 2.33413 203.736 4.48432 203.211 6.12418C200.029 16.0586 196.908 26.0134 193.658 35.9274C193.134 37.5265 193.457 37.785 194.99 37.7238C197.944 37.6149 200.904 37.6353 203.864 37.7238C204.907 37.751 205.31 37.37 205.586 36.431C206.266 34.0835 207.046 31.7632 207.752 29.4292C207.988 28.6603 208.324 28.2521 209.232 28.2793C211.654 28.3473 214.083 28.3405 216.511 28.2793C217.473 28.2589 217.864 28.6195 218.039 29.5585C218.462 31.8448 219.027 34.1039 219.451 36.3901C219.64 37.3972 220.064 37.7442 221.106 37.717C224.06 37.6421 227.02 37.6558 229.98 37.7102C231.036 37.7306 231.298 37.4516 231.029 36.3765C230.269 33.3078 229.664 30.2049 228.876 27.143M224.127 17.2766C223.01 18.549 221.544 19.2499 219.922 19.3179C217.036 19.4336 214.15 19.3519 211.042 19.3519C211.87 16.7322 212.663 14.2554 213.43 11.7718C213.646 11.071 214.17 11.1118 214.708 11.1118C217.009 11.1118 219.317 11.0914 221.618 11.1322C223.017 11.1594 224.457 11.384 224.988 12.9218C225.519 14.4664 225.244 15.9906 224.127 17.2698"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M397.748 1.27265C394.055 0.714688 390.301 1.18419 387.24 1.05491C384.623 1.05491 382.672 1.01408 380.721 1.06851C378.965 1.11615 376.785 0.347248 375.568 1.38152C374.444 2.33413 374.289 4.48432 373.765 6.12418C370.583 16.0586 367.461 26.0134 364.212 35.9274C363.687 37.5265 364.01 37.785 365.544 37.7238C368.497 37.6149 371.457 37.6353 374.417 37.7238C375.46 37.751 375.864 37.37 376.139 36.431C376.819 34.0835 377.599 31.7632 378.306 29.4292C378.541 28.6603 378.871 28.2521 379.786 28.2793C382.208 28.3473 384.636 28.3405 387.065 28.2793C388.027 28.2589 388.417 28.6195 388.592 29.5585C389.016 31.8448 389.581 34.1039 390.005 36.3901C390.193 37.3972 390.617 37.7442 391.66 37.717C394.613 37.6421 397.573 37.6558 400.533 37.7102C401.589 37.7306 401.852 37.4584 401.582 36.3833C400.822 33.3146 400.217 30.2118 399.43 27.1498C399.188 26.1972 399.416 25.7617 400.203 25.2922C402.8 23.7408 404.859 21.6314 406.298 18.9301C410.88 10.3293 407.233 2.70838 397.755 1.27265M394.499 17.4739C393.261 18.7123 391.74 19.2907 390.038 19.3655C388.8 19.4132 387.556 19.3723 386.318 19.3723C385.194 19.3792 384.071 19.3315 382.954 19.3928C381.972 19.4472 381.521 19.2839 381.932 18.1407C382.638 16.1811 383.291 14.201 383.856 12.2005C384.098 11.3364 384.522 11.0846 385.356 11.105C387.603 11.1526 389.843 11.105 392.09 11.139C393.55 11.1662 395.07 11.3772 395.582 13.017C396.086 14.6365 395.763 16.2151 394.499 17.4807"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M315.236 0.605844C311.96 -0.156248 308.697 -0.129029 305.374 0.299648C294.112 1.76259 285.091 10.9417 283.866 22.2778C283.099 29.3748 286.752 35.4035 293.197 37.6354C295.619 38.4723 298.128 38.8602 300.786 38.7581C302.125 38.833 303.531 38.6288 304.937 38.4383C315.889 36.9549 324.668 28.463 326.209 17.4467C327.298 9.65569 323.874 2.61314 315.23 0.599038M300.813 28.0752C297.61 27.3675 295.807 25.1085 295.828 21.8356C295.868 15.0108 302.986 9.19299 309.478 10.6832C312.619 11.4044 314.335 13.575 314.342 16.8139C314.348 23.6727 307.325 29.5177 300.813 28.0752Z"
+                      fill="#282828"
+                    />
+                    <path
+                      d="M190.402 2.52464C190.355 1.37469 190.046 1.01406 188.882 1.02767C184.267 1.09571 179.652 1.10252 175.037 1.02086C173.806 1.00045 173.133 1.46315 172.481 2.43618C166.682 11.0982 160.835 19.7398 155.009 28.3813C152.985 31.3821 150.96 34.3828 148.719 37.6966C151.74 37.6966 154.431 37.4448 157.055 37.7578C160.351 38.1525 162.625 37.1998 163.843 34.0018C164.26 32.9063 165.06 32.6069 166.224 32.6341C169.534 32.7157 172.851 32.6613 176.167 32.6613C179.847 32.6613 179.887 32.6613 180.002 36.3901C180.035 37.3972 180.311 37.7306 181.32 37.7102C184.455 37.6557 187.59 37.6557 190.732 37.7102C191.741 37.7306 192.057 37.4312 192.004 36.3901C191.438 25.1016 190.9 13.8131 190.409 2.51783M178.751 23.6999C176.154 23.6455 173.557 23.6795 170.55 23.6795C173.046 19.9235 175.346 16.4736 177.627 13.017C178.037 12.391 178.629 12.4454 179.201 12.5339C179.901 12.636 179.686 13.2552 179.699 13.6838C179.787 16.6097 179.827 19.5356 179.935 22.4547C179.968 23.3733 179.699 23.7203 178.751 23.7067"
+                      fill="#282828"
+                    />
+                  </svg>
+                </div>
+                <div class="col-6 sidetext">
+                  <h5>
+                    <span class="float-end">Warranty </span> <br />
+                    <span class="float-end"> Form</span>
+                  </h5>
+                </div>
+              </div>
+
+              <!-- ----------- left-sec-top-box -end--------------- -->
+
+              <!-- ----------- left-sec-mid-box--------------- -->
+
+              <div class="row gx-5 top-box">
+                <p class="details-text">
+                  Fill your details to apply for the warranty
+                </p>
+                <div class="col-6">
+                  <label for="customerName" class="form-label namelable"
+                    >Customer Name
+                    <span class="reqsym" style="color: #000">* </span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="customerName"
+                    name="customer_name"
+                    required
+                  />
+                </div>
+                <div class="col-6">
+                  <label for="phoneNumber" class="form-label numberlable"
+                    >Phone Number<span class="reqsym" style="color: #000">
+                      *
+                    </span>
+                  </label>
+                  <input
+                    type="number"
+                    class="form-control custom-input"
+                    id="phoneNumber"
+                    name="phone_number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- ----------- left-sec-mid-box-end--------------- -->
+
+              <div class="row gx-5 midd-box">
+                <h4 class="vehicleinfo pt-5 pb-4">
+                  Vehicle Information
+                  <span class="reqsym" style="color: #000"> * </span>
+                </h4>
+
+                <div class="col-4">
+                  <label for="Body-Type" class="form-label namelable"
+                    >Body Type</label
+                  >
+                  <select
+                    class="form-control"
+                    name="Body-Type"
+                    id="Body-Type"
+                    required
+                  >
+                    <option value="" disabled selected></option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Luxury">Luxury</option>
+                    <option value="Minivan">Minivan</option>
+                    <option value="MUV">MUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="Brand" class="form-label namelable">Brand</label>
+                  <select class="form-control" name="Brand" id="Brand" required>
+                    <option value="" disabled selected></option>
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Citroen">Citroen</option>
+                    <option value="Datsun">Datsun</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Land Rover">Land Rover</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="MG Motors">MG Motors</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Jeep">Jeep</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                  <label for="Model" class="form-label namelable">Model</label>
+
+                  <select class="form-control" name="Model" id="Model" required>
+                    <option value="" disabled selected></option>
+                    <option value="Baleno">Baleno</option>
+                    <option value="Wagon R">Wagon R</option>
+                    <option value="Dzire">Dzire</option>
+                    <option value="Swift">Swift</option>
+                    <option value="Ciaz">Ciaz</option>
+                    <option value="Brezza">Brezza</option>
+                    <option value="Alto 800">Alto 800</option>
+                    <option value="Celerio">Celerio</option>
+                    <option value="Alto">Alto</option>
+                    <option value="S-Presso">S-Presso</option>
+                    <option value="Ertiga">Ertiga</option>
+                    <option value="Ignis">Ignis</option>
+                    <option value="S-Cross">S-Cross</option>
+                    <option value="XL6">XL6</option>
+                    <option value="Ritz">Ritz</option>
+                    <option value="A-Star">A-Star</option>
+                    <option value="Eeco">Eeco</option>
+                    <option value="Grand Vitara">Grand Vitara</option>
+                    <option value="New Ertiga">New Ertiga</option>
+                    <option value="Celerio X">Celerio X</option>
+                    <option value="Fronx">Fronx</option>
+                    <option value="Jimny">Jimny</option>
+                    <option value="1000">1000</option>
+                    <option value="800">800</option>
+                    <option value="Esteem">Esteem</option>
+                    <option value="Estilo">Estilo</option>
+                    <option value="Gypsy">Gypsy</option>
+                    <option value="Invicto">Invicto</option>
+                    <option value="Omni">Omni</option>
+                    <option value="SX4">SX4</option>
+                    <option value="Versa">Versa</option>
+                    <option value="Zen">Zen</option>
+                    <option value="Zen Estilo">Zen Estilo</option>
+                    <option value="Grand i10">Grand i10</option>
+                    <option value="i20">i20</option>
+                    <option value="Verna">Verna</option>
+                    <option value="Creta">Creta</option>
+                    <option value="Venue">Venue</option>
+                    <option value="New Santro 1.1">New Santro 1.1</option>
+                    <option value="Xcent">Xcent</option>
+                    <option value="i10">i10</option>
+                    <option value="Eon">Eon</option>
+                    <option value="Grand i10 Nios">Grand i10 Nios</option>
+                    <option value="Aura">Aura</option>
+                    <option value="Alcazar">Alcazar</option>
+                    <option value="Santro Xing">Santro Xing</option>
+                    <option value="Elantra">Elantra</option>
+                    <option value="Tucson">Tucson</option>
+                    <option value="Accent">Accent</option>
+                    <option value="Accent Viva">Accent Viva</option>
+                    <option value="Creta N-Line">Creta N-Line</option>
+                    <option value="Exter">Exter</option>
+                    <option value="Getz">Getz</option>
+                    <option value="Getz Prime">Getz Prime</option>
+                    <option value="Neo Fluidic Elantra">
+                      Neo Fluidic Elantra
+                    </option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Santro">Santro</option>
+                    <option value="Sonata">Sonata</option>
+                    <option value="Sonata Embera">Sonata Embera</option>
+                    <option value="Terracan">Terracan</option>
+                    <option value="Venue N-Line">Venue N-Line</option>
+                    <option value="Amaze">Amaze</option>
+                    <option value="City">City</option>
+                    <option value="Brio">Brio</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="WR-V">WR-V</option>
+                    <option value="Mobilio">Mobilio</option>
+                    <option value="BR-V">BR-V</option>
+                    <option value="Civic">Civic</option>
+                    <option value="CR-V">CR-V</option>
+                    <option value="Elevate">Elevate</option>
+                    <option value="Accord">Accord</option>
+                    <option value="Civic Hybrid">Civic Hybrid</option>
+                    <option value="Nexon">Nexon</option>
+                    <option value="Tiago">Tiago</option>
+                    <option value="Altroz">Altroz</option>
+                    <option value="Punch">Punch</option>
+                    <option value="Tigor">Tigor</option>
+                    <option value="Tiago NRG">Tiago NRG</option>
+                    <option value="Harrier">Harrier</option>
+                    <option value="Hexa">Hexa</option>
+                    <option value="Zest">Zest</option>
+                    <option value="Aria">Aria</option>
+                    <option value="Bolt">Bolt</option>
+                    <option value="Curvy">Curvy</option>
+                    <option value="Indica">Indica</option>
+                    <option value="Indica eV2">Indica eV2</option>
+                    <option value="Indica V2">Indica V2</option>
+                    <option value="Indica V2 Turbo">Indica V2 Turbo</option>
+                    <option value="Indica V2 Xeta">Indica V2 Xeta</option>
+                    <option value="Indica Vista">Indica Vista</option>
+                    <option value="Indicab">Indicab</option>
+                    <option value="Indigo">Indigo</option>
+                    <option value="Indigo CS">Indigo CS</option>
+                    <option value="Indigo eCS">Indigo eCS</option>
+                    <option value="Indigo Marina">Indigo Marina</option>
+                    <option value="Indigo XL">Indigo XL</option>
+                    <option value="Manza">Manza</option>
+                    <option value="Movus">Movus</option>
+                    <option value="Nano">Nano</option>
+                    <option value="Nano GenX">Nano GenX</option>
+                    <option value="Nexon EV">Nexon EV</option>
+                    <option value="Nexon EV Max">Nexon EV Max</option>
+                    <option value="Nexon EV Prime">Nexon EV Prime</option>
+                    <option value="Safari">Safari</option>
+                    <option value="Safari Storme">Safari Storme</option>
+                    <option value="Sierra">Sierra</option>
+                    <option value="Sumo">Sumo</option>
+                    <option value="Sumo Gold">Sumo Gold</option>
+                    <option value="Sumo Grande">Sumo Grande</option>
+                    <option value="Sumo Grande MK II">Sumo Grande MK II</option>
+                    <option value="Sumo Spacio">Sumo Spacio</option>
+                    <option value="Sumo Victa">Sumo Victa</option>
+                    <option value="Tiago EV">Tiago EV</option>
+                    <option value="Tigor EV">Tigor EV</option>
+                    <option value="Venture">Venture</option>
+                    <option value="Vista Tech">Vista Tech</option>
+                    <option value="Xenon XT">Xenon XT</option>
+                    <option value="Kwid">Kwid</option>
+                    <option value="Kiger">Kiger</option>
+                    <option value="Triber">Triber</option>
+                    <option value="Duster">Duster</option>
+                    <option value="Captur">Captur</option>
+                    <option value="Fluence">Fluence</option>
+                    <option value="Koleos">Koleos</option>
+                    <option value="Lodgy">Lodgy</option>
+                    <option value="Logan">Logan</option>
+                    <option value="Pulse">Pulse</option>
+                    <option value="Scala">Scala</option>
+                    <option value="Thar">Thar</option>
+                    <option value="XUV 300">XUV 300</option>
+                    <option value="XUV500">XUV500</option>
+                    <option value="XUV700">XUV700</option>
+                    <option value="Scorpio">Scorpio</option>
+                    <option value="Scorpio N">Scorpio N</option>
+                    <option value="Bolero Neo">Bolero Neo</option>
+                    <option value="Alturas G4">Alturas G4</option>
+                    <option value="Bolero">Bolero</option>
+                    <option value="KUV100">KUV100</option>
+                    <option value="TUV300">TUV300</option>
+                    <option value="Armada">Armada</option>
+                    <option value="e20">e20</option>
+                    <option value="KUV100 NXT">KUV100 NXT</option>
+                    <option value="Marazzo">Marazzo</option>
+                    <option value="Marshal">Marshal</option>
+                    <option value="NuvoSport">NuvoSport</option>
+                    <option value="Quanto">Quanto</option>
+                    <option value="REVAI">REVAI</option>
+                    <option value="Scorpio Classic">Scorpio Classic</option>
+                    <option value="Scorpio Getaway">Scorpio Getaway</option>
+                    <option value="Thar Roxx">Thar Roxx</option>
+                    <option value="TUV 300 PLUS">TUV 300 PLUS</option>
+                    <option value="Verito">Verito</option>
+                    <option value="XUV 300 TurboSport">
+                      XUV 300 TurboSport
+                    </option>
+                    <option value="XUV 3XO">XUV 3XO</option>
+                    <option value="Xylo">Xylo</option>
+                    <option value="Seltos">Seltos</option>
+                    <option value="Sonet">Sonet</option>
+                    <option value="Carens">Carens</option>
+                    <option value="Carnival">Carnival</option>
+                    <option value="Freestyle">Freestyle</option>
+                    <option value="Classic">Classic</option>
+                    <option value="Escort">Escort</option>
+                    <option value="Fiesta">Fiesta</option>
+                    <option value="Fiesta Classic">Fiesta Classic</option>
+                    <option value="Fusion">Fusion</option>
+                    <option value="Ikon">Ikon</option>
+                    <option value="Mondeo">Mondeo</option>
+                    <option value="mustang">mustang</option>
+                    <option value="Polo">Polo</option>
+                    <option value="Ameo">Ameo</option>
+                    <option value="Virtus">Virtus</option>
+                    <option value="Tiguan">Tiguan</option>
+                    <option value="Cross Polo">Cross Polo</option>
+                    <option value="Vento">Vento</option>
+                    <option value="Taigun">Taigun</option>
+                    <option value="1600">1600</option>
+                    <option value="Beetle">Beetle</option>
+                    <option value="Jetta">Jetta</option>
+                    <option value="Passat">Passat</option>
+                    <option value="Phaeton">Phaeton</option>
+                    <option value="T-Roc">T-Roc</option>
+                    <option value="Tiguan AllSpace">Tiguan AllSpace</option>
+                    <option value="touareg">touareg</option>
+                    <option value="Glanza">Glanza</option>
+                    <option value="Innova Crysta">Innova Crysta</option>
+                    <option value="Corolla Altis">Corolla Altis</option>
+                    <option value="Etios">Etios</option>
+                    <option value="Etios Liva">Etios Liva</option>
+                    <option value="Etios Cross">Etios Cross</option>
+                    <option value="Camry">Camry</option>
+                    <option value="Urban Cruiser">Urban Cruiser</option>
+                    <option value="Urban Cruiser Hyryder">
+                      Urban Cruiser Hyryder
+                    </option>
+                    <option value="Alphard">Alphard</option>
+                    <option value="Celica">Celica</option>
+                    <option value="Corolla">Corolla</option>
+                    <option value="Corona">Corona</option>
+                    <option value="Fortuner">Fortuner</option>
+                    <option value="Hilux">Hilux</option>
+                    <option value="Innova">Innova</option>
+                    <option value="Innova Hycross">Innova Hycross</option>
+                    <option value="Land Cruiser">Land Cruiser</option>
+                    <option value="Land Cruiser Prado">
+                      Land Cruiser Prado
+                    </option>
+                    <option value="Prius">Prius</option>
+                    <option value="Qualis">Qualis</option>
+                    <option value="Rumion">Rumion</option>
+                    <option value="Urban Cruiser Taisor">
+                      Urban Cruiser Taisor
+                    </option>
+                    <option value="Yaris">Yaris</option>
+                    <option value="Kushaq">Kushaq</option>
+                    <option value="Slavia">Slavia</option>
+                    <option value="Rapid">Rapid</option>
+                    <option value="Karoq">Karoq</option>
+                    <option value="Octavia">Octavia</option>
+                    <option value="Superb">Superb</option>
+                    <option value="Fabia">Fabia</option>
+                    <option value="Fabia Scout">Fabia Scout</option>
+                    <option value="Kodiaq">Kodiaq</option>
+                    <option value="Laura">Laura</option>
+                    <option value="Octavia Combi">Octavia Combi</option>
+                    <option value="Superb Old">Superb Old</option>
+                    <option value="Yeti">Yeti</option>
+                    <option value="Magnite">Magnite</option>
+                    <option value="Micra">Micra</option>
+                    <option value="Sunny">Sunny</option>
+                    <option value="Micra Active">Micra Active</option>
+                    <option value="Terrano">Terrano</option>
+                    <option value="350Z">350Z</option>
+                    <option value="370Z">370Z</option>
+                    <option value="Evalia">Evalia</option>
+                    <option value="Kicks">Kicks</option>
+                    <option value="Teana">Teana</option>
+                    <option value="X-Trail">X-Trail</option>
+                    <option value="Compass">Compass</option>
+                    <option value="Meridian">Meridian</option>
+                    <option value="Wrangler">Wrangler</option>
+                    <option value="GO">GO</option>
+                    <option value="Go Puls">Go Puls</option>
+                    <option value="Hector">Hector</option>
+                    <option value="Hector Plus">Hector Plus</option>
+                    <option value="Astor">Astor</option>
+                    <option value="Gloster">Gloster</option>
+                    <option value="ZS EV">ZS EV</option>
+                    <option value="A4">A4</option>
+                    <option value="A3">A3</option>
+                    <option value="A3 Cabriolet">A3 Cabriolet</option>
+                    <option value="A6">A6</option>
+                    <option value="A6 Matrix">A6 Matrix</option>
+                    <option value="Q2">Q2</option>
+                    <option value="Q3">Q3</option>
+                    <option value="Q5">Q5</option>
+                    <option value="Q7">Q7</option>
+                    <option value="R8">R8</option>
+                    <option value="RS5">RS5</option>
+                    <option value="RS6">RS6</option>
+                    <option value="RS7 Sportback">RS7 Sportback</option>
+                    <option value="S5 Sportback">S5 Sportback</option>
+                    <option value="TT">TT</option>
+                    <option value="Beat">Beat</option>
+                    <option value="Spark">Spark</option>
+                    <option value="Aveo">Aveo</option>
+                    <option value="Aveo Old">Aveo Old</option>
+                    <option value="Aveo U-VA">Aveo U-VA</option>
+                    <option value="Captiva">Captiva</option>
+                    <option value="Cruze">Cruze</option>
+                    <option value="Enjoy">Enjoy</option>
+                    <option value="Forester">Forester</option>
+                    <option value="Optra">Optra</option>
+                    <option value="Optra Magnum">Optra Magnum</option>
+                    <option value="Optra SRV">Optra SRV</option>
+                    <option value="Sail">Sail</option>
+                    <option value="Sail Hatchback">Sail Hatchback</option>
+                    <option value="Sail U-VA">Sail U-VA</option>
+                    <option value="Tavera">Tavera</option>
+                    <option value="Trailblazer">Trailblazer</option>
+                    <option value="C-Class">C-Class</option>
+                    <option value="CLA">CLA</option>
+                    <option value="GLA">GLA</option>
+                    <option value="A-Class">A-Class</option>
+                    <option value="AMG GT">AMG GT</option>
+                    <option value="B-Class">B-Class</option>
+                    <option value="E-Class">E-Class</option>
+                    <option value="E-Class Cabriolet">E-Class Cabriolet</option>
+                    <option value="GL">GL</option>
+                    <option value="GLB">GLB</option>
+                    <option value="GLC">GLC</option>
+                    <option value="GLE">GLE</option>
+                    <option value="GLE Coupe">GLE Coupe</option>
+                    <option value="GLS">GLS</option>
+                    <option value="ML-Class">ML-Class</option>
+                    <option value="S-Coupe">S-Coupe</option>
+                    <option value="SL">SL</option>
+                    <option value="2 Series Gran Coupe">
+                      2 Series Gran Coupe
+                    </option>
+                    <option value="X1">X1</option>
+                    <option value="1 Series">1 Series</option>
+                    <option value="3 Series">3 Series</option>
+                    <option value="3 Series GT">3 Series GT</option>
+                    <option value="4 Series">4 Series</option>
+                    <option value="5 Series">5 Series</option>
+                    <option value="5 Series GT">5 Series GT</option>
+                    <option value="6 Series">6 Series</option>
+                    <option value="7 Series">7 Series</option>
+                    <option value="8 Series">8 Series</option>
+                    <option value="i8">i8</option>
+                    <option value="M3">M3</option>
+                    <option value="M5">M5</option>
+                    <option value="X3">X3</option>
+                    <option value="X4">X4</option>
+                    <option value="X5">X5</option>
+                    <option value="X6">X6</option>
+                    <option value="Z4">Z4</option>
+                    <option value="Discovery Sport">Discovery Sport</option>
+                    <option value="Discovery">Discovery</option>
+                    <option value="Discovery 3">Discovery 3</option>
+                    <option value="Discovery 4">Discovery 4</option>
+                    <option value="Range Rover Evoque">
+                      Range Rover Evoque
+                    </option>
+                    <option value="C5 Aircross">C5 Aircross</option>
+                    <option value="Basalt">Basalt</option>
+                    <option value="C3">C3</option>
+                    <option value="C3 AIRCROSS">C3 AIRCROSS</option>
+                    <!-- <option value="Other">Other</option> -->
+                  </select>
+                </div>
+
+                <div class="col-4 mt-5">
+                  <label for="Coor" class="form-label namelable"
+                    >Color<span class="reqsym" style="color: #000"
+                      >*
+                    </span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="customerName"
+                    name="customer_name"
+                    required
+                  />
+                </div>
+                <div class="col-4 mt-5">
+                  <label for="Chassis-no" class="form-label namelable"
+                    >Chassis No.<span class="reqsym" style="color: #000"
+                      >*
+                    </span></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control custom-input"
+                    id="Chassis-no"
+                    name="customer_name"
+                    required
+                  />
+                </div>
+                <div class="col-4 mt-5">
+                  <label for="Service-Outlet" class="form-label namelable"
+                    >Service Outlet</label
+                  >
+
+                  <select
+                    class="form-control"
+                    name="Service-Outlet"
+                    id="Service-Outlet"
+                    required
+                  >
+                    <option value="" disabled selected></option>
+                    <option value="Agra">Agra</option>
+                    <option value="Ambience Mall">Ambience Mall</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Dwarka">Dwarka</option>
+                    <option value="Gurugram">Gurugram</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Indore">Indore</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Janakpuri">Janakpuri</option>
+                    <option value="Mohali">Mohali</option>
+                    <option value="Nagpur">Nagpur</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Promenade Mall">Promenade Mall</option>
+                    <option value="Rudrapur">Rudrapur</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Vadodara">Vadodara</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- ----------- left-sec-bottom-box--------------- -->
+
+              <!-- ----------- left-sec-bottom-box-box--------------- -->
+            </div>
+
+            <div class="yellow-bg">
+                <p class="">
+                  We’ve got you covered- <br />
+  
+                  <strong> Reliable protection for your valued purchase. </strong>
+                </p>
+              </div>
+          </div>
+          <!-- =============================================left-section -end========================= -->
+          <div class="col-md-4 ">
+            <div class=" right-section">
+                <h3 class="right-heading">
+                     <span class="fw-bold text-white Covered">Services</span>  Covered
+                  </h3>
+       <p class=" text-white right-text">Select the coating series you have chosen for your car</p>
+  
+
+       <div class="radio-buttons my-4">
+          
+            
+
+            
+        <label
+          class="radio-container"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="3 Years M.Warranty"
+        >
+          <input type="radio" name="series" value="Pro Series" />
+          <span class="radio-label">Pro </span>
+        </label>
+      
+        <label
+          class="radio-container"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="5 Years M.Warranty"
+        >
+        
+          <input type="radio" name="series" value="Premium+ Series" />
+          <span class="radio-label">Prime+</span>
+        </label>
+      
+        <label
+          class="radio-container"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="8 Years M.Warranty"
+        >
+          <input type="radio" name="series" value="Proformance Series" />
+          <span class="radio-label">Performance</span>
+        </label>
+      
+        <label
+          class="radio-container"
+          data-bs-toggle="tooltip"
+          data-bs-placement="bottom"
+          title="8 Years M.Warranty"
+        >
+          <input type="radio" name="series" value="Performance+ Series" />
+          <span class="radio-label">Performance+</span>
+        </label>
+      </div>
+
+      <!-- -------------------------service-date---------- -->
+      <div class="series-date-section">
+        <!-- Service Date -->
+        <div
+        class="form-group servicebox d-flex align-items-center  my-2"
+        >
+          <label
+            for="serviceDate"
+            class="form-label col-6 col-sm-7 service-lable"
+            >Service Date  <span class="reqsym" style="color: #fff;"> * </span></label
+          >
+          <input
+            type="text"
+            class="form-control date-input"
+            placeholder="YYYY-MM-DD"
+            id="serviceDate"
+            name="service_date"
+            required
+          />
+          <!-- <span class="placeholder">YYYY-MM-DD</span> -->
+        </div>
+      
+      </div>
+
+      <!-- Upload Picture of Vehicle -->
+      <div class="form-group filebox  my-4">
+        <div>
+          <label for="vehiclePicture" class="form-label service-lable"
+            >Upload picture of vehicle  <span class="reqsym" style="color: #fff;"> * </span></label
+          > <br>
+          <small class="form-text"
+            >
+            Please upload one image file (PNG, JPEG, or JPG). Maximum size: 1 GB
+            <!-- Upload 1 supported file: PNG , JPEG, JPG image, Max 1
+            GB -->
+            </small
+          >
+        </div>
+        <div class="file-upload mt-3">
+          <label for="vehiclePicture" class="upload-btn">
+            <input
+              type="file"
+              id="vehiclePicture"
+              style="display: none"
+              name="vehicle_picture"
+              accept=".jpg, .jpeg, .png"
+            />
+            <i class="bi bi-upload"></i> Add File
+          </label>
+       
+          <span
+            id="fileName"
+          ></span>
+        </div>
+      </div>
+     
+
+      <div class="d-flex align-items-center amountfild my-4">
+        <label for="amountPaid" class="form-label col-7 service-lable"
+          >Total Amount Paid  <span class="reqsym" style="color: #fff;"> * </span></label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="amountPaid"
+          placeholder="₹"
+          name="amount_paid"
+          required
+        />
+      </div>
+
+
+      <div class="form-check mt-3">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="privacyPolicy"
+          required
+        />
+       
+        <label class="form-check-label text-white" for="privacyPolicy">
+          <!-- I agree to all the details in the field above -->
+          I accept  all and the warranty terms and conditions
+
+        </label>
+      </div>
+
+      <button type="submit" class="btn w-100 submitbtn mt-sm-2">
+        Submit
+      </button>
+
+
+            </div>
+          </div>
+        </div>
+        <!-- =============================================bottom-section========================= -->
+
+        <div class="bottom-box">
+          <p class="bottomcopyright text-white text-center">
+            Copyright © DETAILING BULL - All Rights Reserved ®
+          </p>
+        </div>
+        <!-- =============================================bottom-section-end========================= -->
+      </form>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+
+    <script>
+        // Tooltip initialization
+        document.addEventListener("DOMContentLoaded", function () {
+          var tooltipTriggerList = [].slice.call(
+            document.querySelectorAll('[data-bs-toggle="tooltip"]')
+          );
+          var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+          });
+        });
+      </script>
+  </body>
+</html>
